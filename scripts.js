@@ -14,9 +14,17 @@ document.querySelectorAll('.navbar-menu a').forEach((anchor) => {
     const targetElement = document.getElementById(targetId);
     targetElement.scrollIntoView({ behavior: 'smooth' });
 
-    // Close navbar on mobile after clicking
+    // Close navbar on mobile after clicking and remove active class
     if (window.innerWidth <= 768) {
       navbarMenu.classList.remove('active');
+      toggleBtn.focus(); // Improve accessibility
     }
   });
+});
+
+// Close navbar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && !navbarMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+    navbarMenu.classList.remove('active');
+  }
 });

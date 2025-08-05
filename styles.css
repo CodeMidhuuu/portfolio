@@ -36,8 +36,13 @@ body {
   background: none;
   border: none;
   color: #e6edf3;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar-toggle:hover {
+  color: #58a6ff;
 }
 
 .navbar-menu {
@@ -90,7 +95,7 @@ main {
 
 .project-card {
   background: #161b22;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -121,6 +126,16 @@ main {
   transition: background 0.3s;
 }
 
+/* Ensure consistent button sizing */
+.contact-btn {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
 .btn:hover {
   background: #4791db;
 }
@@ -136,6 +151,33 @@ main {
   margin-top: 20px;
 }
 
+/* About section layout */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  flex: 0 0 auto;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #58a6ff;
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-menu {
@@ -147,6 +189,7 @@ main {
     background: #161b22;
     flex-direction: column;
     padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .navbar-menu.active {
@@ -158,11 +201,55 @@ main {
   }
 
   .navbar-menu li {
-    margin: 10px 0;
+    margin: 15px 0;
   }
 
   .section h1,
   .section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .contact-btn {
+    width: 45px;
+    height: 45px;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  main {
+    padding: 80px 15px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .profile-photo {
+    width: 120px;
+    height: 120px;
   }
 }
