@@ -24,7 +24,11 @@ document.querySelectorAll('.navbar-menu a').forEach((anchor) => {
 
 // Close navbar when clicking outside on mobile
 document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 768 && !navbarMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+  if (
+    window.innerWidth <= 768 &&
+    !navbarMenu.contains(e.target) &&
+    !toggleBtn.contains(e.target)
+  ) {
     navbarMenu.classList.remove('active');
   }
 });

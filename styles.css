@@ -177,6 +177,30 @@ main {
   box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
 }
 
+/* Skills section styling */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #58a6ff;
+  color: #0d1117;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.skill-btn:hover {
+  background: #4791db;
+  transform: translateY(-2px);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -227,6 +251,14 @@ main {
     width: 150px;
     height: 150px;
   }
+  .skills-grid {
+    justify-content: center;
+  }
+
+  .skill-btn {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
 }
 
 /* Extra small screens */
@@ -251,5 +283,13 @@ main {
   .profile-photo {
     width: 120px;
     height: 120px;
+  }
+  .skills-grid {
+    gap: 8px;
+  }
+
+  .skill-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }
