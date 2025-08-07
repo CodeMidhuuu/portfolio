@@ -1,35 +1,34 @@
-// Navbar toggle and smooth scrolling with Bootstrap
-document.addEventListener('DOMContentLoaded', () => {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('#navbarNav');
+// Navbar toggle for mobile
+const toggleBtn = document.querySelector('.navbar-toggle');
+const navbarMenu = document.querySelector('.navbar-menu');
 
-  navbarToggler.addEventListener('click', () => {
-    navbarCollapse.classList.toggle('show');
+toggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
+});
+
+// Smooth scrolling for nav links
+document.querySelectorAll('.navbar-menu a').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+
+    // Close navbar on mobile after clicking and remove active class
+    if (window.innerWidth <= 768) {
+      navbarMenu.classList.remove('active');
+      toggleBtn.focus(); // Improve accessibility
+    }
   });
+});
 
-  document.querySelectorAll('.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-
-      if (window.innerWidth <= 768) {
-        navbarCollapse.classList.remove('show');
-      }
-    });
-  });
-
-  // Fade-in animation for sections
-  const sections = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => observer.observe(section));
+// Close navbar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+  if (
+    window.innerWidth <= 768 &&
+    !navbarMenu.contains(e.target) &&
+    !toggleBtn.contains(e.target)
+  ) {
+    navbarMenu.classList.remove('active');
+  }
 });

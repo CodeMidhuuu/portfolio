@@ -1,6 +1,7 @@
 /* Custom styles for innovative dark-mode look */
 body {
-  background: #0d1117;
+  /* background: #0d1117; */
+  background-image: url('ChatGPT Image Aug 7, 2025, 07_29_42 PM.png');
   color: #e6edf3;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
@@ -13,7 +14,7 @@ body {
 .navbar-brand,
 .nav-link {
   transition: all 0.3s ease;
-  color: #58a6ff ;
+  color: #58a6ff;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -29,11 +30,23 @@ body {
 
 .hero {
   margin-top: 2rem;
-  background-color: #161b22;
+  background-color: rgb(22, 27, 34);
   border-radius: 10px;
   padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
-.lead{
+
+.hero-glass {
+  background: rgba(22, 27, 34, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin-top: 6rem;
+  padding: 40px;
+}
+
+.lead {
   font-style: italic;
 }
 
@@ -90,7 +103,9 @@ body {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
