@@ -39,9 +39,7 @@ Check it out here 👉 [Demo](https://midhunbhaskar-portfolio.vercel.app)
 ---
 
 
-## 📄 License
-
-Feel free to fork or clone it for personal use.  
+## 📄 License 
 MIT Licensed.
 
 ---
